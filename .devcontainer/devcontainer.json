@@ -2,6 +2,13 @@
 	"name": "Node.js & TypeScript",
 	"image": "mcr.microsoft.com/devcontainers/typescript-node:16-bullseye",
 
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"TeamsDevApp.ms-teams-vscode-extension"
+			]
+		}
+	},
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.
 	// "forwardPorts": [],
 
