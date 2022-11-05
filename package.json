@@ -5,6 +5,11 @@
   "description": "Try Teams bot",
   "main": "./lib/index.js",
   "scripts": {
+    "start": "node ./lib/index.js",
+    "dev": "run-p build:watch",
+    "build": "tsc -p .",
+    "build:watch": "nodemon --watch 'src/**/*.ts' --exec \"ts-node\" src/index.ts",
+    "clean": "rm -r lib",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -18,9 +23,15 @@
   },
   "homepage": "https://github.com/mitaroThanken/tryTeamsBot#readme",
   "devDependencies": {
+    "@tsconfig/node16": "^1.0.3",
     "@types/node": "^18.11.9",
+    "@types/restify": "^8.5.5",
     "nodemon": "^2.0.20",
+    "npm-run-all": "^4.1.5",
     "ts-node": "^10.9.1",
     "typescript": "^4.8.4"
+  },
+  "dependencies": {
+    "restify": "^8.6.1"
   }
 }
