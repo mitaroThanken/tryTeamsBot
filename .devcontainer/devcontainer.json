@@ -7,6 +7,17 @@
 		}
 	},
 
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"mhutchie.git-graph",
+				"eamodio.gitlens",
+				"SonarSource.sonarlint-vscode",
+				"DavidAnson.vscode-markdownlint"
+			]
+		}
+	},
+
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.
 	// "forwardPorts": [],
 
@@ -14,5 +25,8 @@
 	// "postCreateCommand": "yarn install",
 
 	// Set `remoteUser` to `root` to connect as root instead. More info: https://aka.ms/vscode-remote/containers/non-root.
-	"remoteUser": "node"
+	"remoteUser": "node",
+	"features": {
+		"ghcr.io/devcontainers/features/java:1": {}
+	}
 }
