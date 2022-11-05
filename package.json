@@ -5,10 +5,11 @@
   "description": "Try Teams bot",
   "main": "./lib/index.js",
   "scripts": {
-    "start": "node ./lib/index.js",
-    "dev": "run-p build:watch",
+    "start": "dotenv node ./lib/index.js",
     "build": "tsc -p .",
-    "build:watch": "nodemon --watch 'src/**/*.ts' --exec \"ts-node\" src/index.ts",
+    "dev": "run-p dev:*",
+    "dev:watch": "dotenv nodemon --watch 'src/**/*.ts' --exec \"ts-node\" src/index.ts",
+    "dev:ngrok": "dotenv -- bash -c 'ngrok http --config ./ngrok.yml --log stdout $PORT'",
     "clean": "rm -r lib",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -26,6 +27,7 @@
     "@tsconfig/node16": "^1.0.3",
     "@types/node": "^18.11.9",
     "@types/restify": "^8.5.5",
+    "dotenv-cli": "^6.0.0",
     "nodemon": "^2.0.20",
     "npm-run-all": "^4.1.5",
     "ts-node": "^10.9.1",
