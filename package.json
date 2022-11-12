@@ -3,13 +3,11 @@
   "version": "1.0.0",
   "private": "true",
   "description": "Try Teams bot",
-  "main": "./lib/index.js",
+  "main": "./lib/src/index.js",
   "scripts": {
-    "start": "dotenv node ./lib/index.js",
+    "start": "dotenv node ./lib/src/index.js",
     "build": "tsc -p .",
-    "dev": "run-p dev:*",
-    "dev:watch": "dotenv nodemon --watch 'src/**/*.ts' --exec \"ts-node\" src/index.ts",
-    "dev:ngrok": "dotenv -- bash -c 'ngrok http --config ./ngrok.yml --log stdout $PORT'",
+    "dev": "dotenv ts-node scripts/runDev.ts",
     "clean": "rm -r lib",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -26,10 +24,11 @@
   "devDependencies": {
     "@tsconfig/node16": "^1.0.3",
     "@types/node": "^18.11.9",
+    "@types/nodemon": "^1.19.2",
     "@types/restify": "^8.5.5",
     "dotenv-cli": "^6.0.0",
+    "ngrok": "^4.3.3",
     "nodemon": "^2.0.20",
-    "npm-run-all": "^4.1.5",
     "ts-node": "^10.9.1",
     "typescript": "^4.8.4"
   },
